@@ -1,0 +1,111 @@
+tables
+- users
+- pizzas
+- toppins
+- stats
+
+columns
+-users
+id - number (autoincrements)
+name - string
+email - string
+password - hashed string
+created_at - timestamp
+updated_at - timestamp
+
+
+-pizzas
+id - number (autoincrements)
+name - string
+price - number
+description - string
+
+
+-toppins
+id - number (autoincrements)
+name - string
+extra_price - number
+ 
+-pizzas_toppins
+pizza_id - fk 
+toppin_id - fk
+
+
+-pizzas_stats
+pizza_id - fk 
+stat_id - fk
+
+-stats
+id - number (autoincrements)
+name - string
+extra_price - number
+
+//toppins
+[
+    {
+        id: 1,
+        name: "Extra cheese",
+        extra_price: 1,
+    },
+    {
+        id: 2,
+        name: "olives",
+        extra_price: 0.5
+    }
+]
+
+
+//pizza
+{
+    id: 1, 
+    name: "Cheese Pizza",
+    price: 10,
+
+}
+
+
+
+//answer with join 
+
+[
+    {
+    id: 1, 
+    name: "Cheese Pizza",
+    price: 10,
+    toppins:  {
+        id: 1,
+        name: "Extra cheese",
+        extra_price: 1,
+    }
+},
+
+  {
+    id: 1, 
+    name: "Cheese Pizza",
+    price: 10,
+    toppins:  {
+        id: 2,
+        name: "olives",
+        extra_price: 0.5
+    }
+},
+
+
+]
+
+[
+    {
+        id: 1,
+        name: "Cheese Pizza",
+        price: 10,
+        toppins: [{
+ id: 1,
+        name: "Extra cheese",
+        extra_price: 1,
+        },{
+             id: 2,
+        name: "olives",
+        extra_price: 0.5
+        }]
+    }
+]
