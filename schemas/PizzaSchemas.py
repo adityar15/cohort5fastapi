@@ -4,6 +4,8 @@ class PizzaCreateRequest(BaseModel):
     name: str
     description: str
     basePrice: int
+    toppings: list
+    stats: list
 
     @validator('description')
     def check_for_min_10_chars(cls, v):
