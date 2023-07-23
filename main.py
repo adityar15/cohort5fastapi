@@ -11,6 +11,8 @@ from schemas.StatSchemas import StatCreateRequest
 from origins import origins
 from fastapi.middleware.cors import CORSMiddleware
 
+from routes.attendance import router as attendanceRouter
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -22,6 +24,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(attendanceRouter)
 
 
 @app.get("/")

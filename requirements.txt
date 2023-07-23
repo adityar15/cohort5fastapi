@@ -4,3 +4,4 @@ pydantic[email]
 SQLAlchemy
 psycopg2-binary
 typing
+passlib[bcrypt]
